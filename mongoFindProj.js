@@ -16,6 +16,7 @@
     mongo.connect(url, function(err, db) 
                                         {
                                             // db gives access to the database
+                                            if (err) throw "Bad Bad Error Happened";
                                             var parrots = db.collection('parrots');
                                             parrots.find(query[0],query[1]).toArray(function(err, documents) 
 
